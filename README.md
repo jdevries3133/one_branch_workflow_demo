@@ -113,3 +113,19 @@ git rebase main
 ```
 
 And voila, you're done!
+
+Git will kindly let you know exactly which refs are skipped during the rebase
+process.
+
+```
+➜  one_branch_demo git:(your_dev_branch) grb main
+warning: skipped previously applied commit f899409
+warning: skipped previously applied commit 11b6165
+Successfully rebased and updated refs/heads/your_dev_branch.
+```
+
+These are the commits from `your_dev_branch` that have landed on `main` since
+the last time you rebased. Thus, the one-branch workflow has the added benefit
+of providing you with visibility over which commits are in code review, and
+you'll quickly notice when commits land on the main branch!
+
